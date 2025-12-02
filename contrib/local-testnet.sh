@@ -652,3 +652,7 @@ if [ "$PROV_VOTING_POWER" != "$CONSU_VOTING_POWER" ]; then
 fi
 
 echo "consumer $CONSUMER_ID launched and CCV channel established!"
+
+killall hermes &> /dev/null || true
+pkill -f interchain-security-pd &> /dev/null || true
+pkill -f interchain-security-cd &> /dev/null || true
